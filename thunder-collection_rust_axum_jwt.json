@@ -1,0 +1,23 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "rust_axum_jwt",
+    "dateExported": "2023-04-22T02:53:04.276Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "483fa189-05e8-4c75-83b7-c6bc01ae4931",
+            "colId": "5414dee1-b3b4-4a49-b9cb-f4df4bbbfb9d",
+            "containerId": "",
+            "name": "hello_wold",
+            "url": "http://localhost:3000",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-22T02:50:51.087Z",
+            "modified": "2023-04-22T02:51:15.526Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
