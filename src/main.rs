@@ -1,13 +1,26 @@
-use axum::{Router, routing::get};
+use dotenvy::dotenv;
+use dotenvy_macro::dotenv;
+use rust_axum_jwt::{run, app_state::AppState};
+use sea_orm::Database;
 
 #[tokio::main]
 async fn main() {
-   // build our application with a single route
-   let app = Router::new().route("/", get(|| async { "Hello, World!" }));
 
-   // run it with hyper on localhost:3000
-   axum::Server::bind(&"0.0.0.0:3000".parse().unwrap())
-       .serve(app.into_make_service())
-       .await
-       .unwrap();
+  dotenv().ok();
+  let database_url = dotenv!("DATABASE_URL").to_owned();
+
+  let db = match Database::connect(database_url).await {
+    Ok(db) => db,
+    Err(error) => {
+        eprintln!("Error connecting to the database: {:?}", error);
+        panic!();
+    }
+};
+
+  let app_state = AppState{
+    database:db
+  };
+
+  run(app_state).await;
+  
 }
