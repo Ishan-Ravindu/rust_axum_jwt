@@ -1,5 +1,6 @@
 mod router;
 mod routes;
+mod database;
 pub mod app_state;
 use app_state::AppState;
 use router::create_router;

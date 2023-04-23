@@ -1,6 +1,28 @@
-use axum::extract::State;
-use sea_orm::DatabaseConnection;
+use axum::{extract::State, Json};
+use sea_orm::{DatabaseConnection, EntityTrait, Set};
+use serde:: Deserialize;
 
-pub async fn create_user(State(_database):State<DatabaseConnection>)->String{
-    "user creates".to_owned()
+use crate::database::users;
+
+#[derive(Deserialize)]
+pub struct RequestUser{
+    username:String,
+    password:String
+}
+
+pub async fn create_user(
+    State(database):State<DatabaseConnection>,
+    Json(user):Json<RequestUser>
+)->String{
+    
+    let user = users::ActiveModel{
+        username:Set(user.username) ,
+        password:Set(user.password) ,
+        ..Default::default()
+    };
+
+    let _result =
+         users::Entity::insert(user).exec(&database).await.unwrap();
+    
+    "user created".to_owned()
 }
