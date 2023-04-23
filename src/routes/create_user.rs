@@ -18,6 +18,7 @@ pub async fn create_user(
     let user = users::ActiveModel{
         username:Set(user.username) ,
         password:Set(user.password) ,
+        token:Set(Some("1n2nkk4nkn5nk5nk4nk5kn".to_owned())),
         ..Default::default()
     };
 
