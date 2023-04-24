@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "rust_axum_jwt",
-    "dateExported": "2023-04-22T02:53:04.276Z",
+    "dateExported": "2023-04-24T11:07:53.906Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,9 +14,69 @@
             "method": "GET",
             "sortNum": 10000,
             "created": "2023-04-22T02:50:51.087Z",
-            "modified": "2023-04-22T02:51:15.526Z",
+            "modified": "2023-04-24T11:07:49.348Z",
             "headers": [],
             "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2ODIzMzQ0ODUsImlhdCI6MTY4MjMzNDQ1NX0._tStxlHMB423tdg7CZYoQCG6NJ2Zz61yH8cFYqvOA6g"
+            },
+            "tests": []
+        },
+        {
+            "_id": "19274eb5-bdeb-479e-b13f-67aae4bf98f7",
+            "colId": "5414dee1-b3b4-4a49-b9cb-f4df4bbbfb9d",
+            "containerId": "",
+            "name": "create_user",
+            "url": "http://localhost:3000/user",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-04-22T06:00:33.040Z",
+            "modified": "2023-04-24T11:03:47.388Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\":\"ishan3\",\n  \"password\":\"1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6a046933-7893-46a0-9716-abdcd7a50274",
+            "colId": "5414dee1-b3b4-4a49-b9cb-f4df4bbbfb9d",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:3000/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-04-24T04:57:16.683Z",
+            "modified": "2023-04-24T11:04:42.575Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\":\"ishan3\",\n  \"password\":\"1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5833318a-5c6f-4bea-8bc4-e1659a2c459f",
+            "colId": "5414dee1-b3b4-4a49-b9cb-f4df4bbbfb9d",
+            "containerId": "",
+            "name": "logout",
+            "url": "http://localhost:3000/logout",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-04-24T11:06:37.094Z",
+            "modified": "2023-04-24T11:07:19.729Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2ODIzMzQ0NTEsImlhdCI6MTY4MjMzNDQyMX0.dHB8oueS2eam8-Xvlu0xeWgTNzqwRGkAPygtqzimg0A"
+            },
             "tests": []
         }
     ]
